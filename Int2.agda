@@ -19,21 +19,36 @@ isuc (- (suc n)) = - n
 
 -- given i, return i - 1.
 ipred : Int → Int
-ipred = ?
+ipred (+ i) = - (suc i) 
+ipred (- i) = - (suc i) 
 
 -- given i, return -i.
 ineg : Int → Int
-ineg = ?
+ineg (- i)= - (suc i)
+ineg (+ i) = - (suc i)
 
 -- given i & j, return i + j.
 iplus : Int → Int → Int
-iplus = ?
+iplus (+ i ) (+ j) = + (plus i j)
+iplus (- i ) (+ j) = + (plus i j)
+iplus (+ i ) (- j) = + (plus j i)
+iplus (- i ) (- j) = - (plus i j)
+
 
 -- given i & j, return i - j.
 iminus : Int → Int → Int
-iminus = ?
+-- I don't really understand why j isn't a valid argument?
+iminus (+ i) (+ j)= + (i j)
+-- I also can't get rid of this zero
+iminus (- i) (- j)= - (i j)
+iminus (- i) (+ j)= + (j i)
+iminus (- i) (+ j)= - (i j)
 
 -- given i & j, return i * j.
 itimes : Int → Int → Int
-itimes = ?
+itimes (+ i) (+ j)= + (times i j)
+itimes (- i) (- j)= + (times i j)
+itimes (- i) (+ j)= - (times i j)
+itimes (+ i) (- j)= - (times i j)
+
 
